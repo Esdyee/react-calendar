@@ -22,6 +22,8 @@ const Week: FC<IWeekProps> = ({ // Week 컴포넌트 정의
   countRows
 }) => {
   const { sortedWeekEvents } = getSortedWeekEvents(weekDays, longEvents); // 장기 이벤트 정렬
+  console.log('Week.tsx', longEvents);
+  
   const { sortedWeekEvents: weekShortEvents } = getSortedWeekEvents(weekDays, shortEvents); // 단기 이벤트 정렬
 
   const weekEventsPositionY = getPositionYForWeekEvents(sortedWeekEvents); // 이벤트의 Y 위치 계산

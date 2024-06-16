@@ -30,20 +30,20 @@ export const useCalendar = ({
   firstWeekDayNumber = 2,
   defaultMode = 'week'
 }: UseCalendarParams) => {
-  const [mode, setMode] = React.useState<IModes>(defaultMode);
-  const [selectedDay, setSelectedDay] = React.useState(createDate({ date }));
-  const [selectedWeek, setSelectedWeek] = React.useState(createWeek({ date: selectedDay.date, locale }));
+  const [mode, setMode] = React.useState<IModes>(defaultMode); // 상태: 현재 모드
+  const [selectedDay, setSelectedDay] = React.useState(createDate({ date })); // 상태: 선택된 날짜
+  const [selectedWeek, setSelectedWeek] = React.useState(createWeek({ date: selectedDay.date, locale })); // 상태: 선택된 주
   const [selectedMonth, setSelectedMonth] = React.useState(
     createMonth({ date: new Date(selectedDay.year, selectedDay.monthIndex), locale })
-  );
-  const [selectedYear, setSelectedYear] = React.useState(selectedDay.year);
+  ); // 상태: 선택된 월
+  const [selectedYear, setSelectedYear] = React.useState(selectedDay.year); // 상태: 선택된 연도
   const [selectedYearsInterval, setSelectedYearsInterval] = React.useState(
     getYearsInterval(selectedDay.year)
-  );
+  ); // 상태: 선택된 연도 구간
 
-  const monthesNames = React.useMemo(() => getMonthesNames(selectedDay.date, locale), [selectedDay]);
-  const weekDaysNames = React.useMemo(() => getWeekDaysNames(firstWeekDayNumber, locale), []);
-  const weekDays = React.useMemo(() => selectedWeek.createWeekDays(), [selectedWeek.dayNumber, selectedYear, selectedMonth.monthIndex]);
+  const monthesNames = React.useMemo(() => getMonthesNames(selectedDay.date, locale), [selectedDay]); // 메모: 월 이름
+  const weekDaysNames = React.useMemo(() => getWeekDaysNames(firstWeekDayNumber, locale), []); // 메모: 요일 이름
+  const weekDays = React.useMemo(() => selectedWeek.createWeekDays(), [selectedWeek.dayNumber, selectedYear, selectedMonth.monthIndex]); // 메모: 주의 날짜들
   const displayedDate = React.useMemo(() => {
     if (mode === 'year') {
       return `${selectedYear}`;
@@ -52,13 +52,13 @@ export const useCalendar = ({
       return `${monthesNames[selectedMonth.monthIndex].month} ${selectedYear}`;
     }
     return selectedWeek.displayedMonth;
-  }, [selectedYear, selectedMonth.monthIndex, selectedWeek.dayNumber, mode]);
+  }, [selectedYear, selectedMonth.monthIndex, selectedWeek.dayNumber, mode]); // 메모: 표시되는 날짜
 
   const calendarDaysOfMonth = React.useMemo(() => {
     return mode !== 'month'
       ? []
       : getCalendarDaysOfMonth({ year: selectedYear, monthIndex: selectedMonth.monthIndex, firstWeekDayNumber })
-  }, [selectedYear, selectedMonth.monthIndex, mode]);
+  }, [selectedYear, selectedMonth.monthIndex, mode]); // 메모: 월의 날짜들
 
   const calendarDaysOfYear = React.useMemo(() => {
     if (mode !== 'year') {
@@ -66,7 +66,7 @@ export const useCalendar = ({
     }
 
     return getCalendarDaysOfYear({ year: selectedYear, firstWeekDayNumber });
-  }, [selectedYear, mode]);
+  }, [selectedYear, mode]); // 메모: 연의 날짜들
 
   const onChangeState = (date: Date) => {
     const { year, monthIndex } = createDate({ date });
@@ -77,7 +77,7 @@ export const useCalendar = ({
     !(isCurrentYear && isCurrentMonth) && setSelectedMonth(createMonth({ date, locale }));
     !checkDateIsEqual(date, selectedWeek.date) && setSelectedWeek(createWeek({ date, locale }));
     !checkDateIsEqual(date, selectedDay.date) && setSelectedDay(createDate({ date }));
-  }
+  } // 함수: 상태 변경
 
   const onClickArrow = (direction: IDirections) => {
     if (direction === 'today') {
@@ -112,11 +112,11 @@ export const useCalendar = ({
       }
       return setSelectedYear(year);
     }
-  };
+  }; // 함수: 화살표 클릭 이벤트 처리
   
   const setSelectedMonthByIndex = (monthIndex: number) => {
     setSelectedMonth(createMonth({ date: new Date(selectedYear, monthIndex), locale }));
-  };
+  }; // 함수: 월 선택
 
   return {
     state: {

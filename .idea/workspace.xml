@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a152d755-d3b8-4869-883d-71ed2586a363" name="Changes" comment="" />
+    <list default="true" id="a152d755-d3b8-4869-883d-71ed2586a363" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/calendar/Calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/Calendar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/calendar/components/month-calendar/components/day/Day.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/components/month-calendar/components/day/Day.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/calendar/components/month-calendar/components/week/Week.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/components/month-calendar/components/week/Week.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/long-event/LongEvent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/long-event/LongEvent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/modals/modal-form-event/ModalFormEvent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/modals/modal-form-event/ModalFormEvent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/short-event/ShortEvent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/short-event/ShortEvent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gateway/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gateway/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useCalendar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useCalendar.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +73,7 @@
       <workItem from="1718286929104" duration="1373000" />
       <workItem from="1718290229362" duration="12000" />
       <workItem from="1718290249441" duration="347000" />
+      <workItem from="1718460910614" duration="1637000" />
     </task>
     <servers />
   </component>

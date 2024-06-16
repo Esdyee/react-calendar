@@ -38,6 +38,7 @@ const ShortEvent: FC<IShortEventProps> = ({
       onClick={handleOpenModal}
       style={eventStyle}
     >
+      Short Event
       <div
         className={styles.event__circle}
         style={eventCircleStyle}

@@ -1,6 +1,7 @@
 import { METHODS, RequestsOptions } from "./types";
 
 const baseUrl = 'https://61d8e2cfe6744d0017ba8cdc.mockapi.io/events';
+// const baseUrl = 'https://666d6d637a3738f7cacc584c.mockapi.io/events';
 
 class Http {
   baseUrl: string;

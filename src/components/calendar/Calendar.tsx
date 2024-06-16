@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useCalendar } from 'hooks/useCalendar';
-import WeekCalendar from './components/week-calendar/WeekCalendar'; // 주간 달력을 표시하는 컴포넌트
+import WeekCalendar from './components/week-calendar/WeekCalendar'; // 주간 달력을 표시하는 컴포넌
 import Header from 'components/common/header/Header'; // 달력의 헤더 부분을 표시하는 컴포넌트
 import YearCalendar from './components/year-calendar/YearCalendar'; // 연간 달력을 표시하는 컴포넌트
 import MonthCalendar from './components/month-calendar/MonthCalendar'; // 월간 달력을 표시하는 컴포넌트
@@ -12,6 +12,42 @@ interface ICalendarProps {
 
 const Calendar: FC<ICalendarProps> = ({  }) => {
   const { state, functions } = useCalendar({ selectedDate: new Date() }); // 달력의 상태와 함수를 관리하는 훅
+
+  console.log(state);
+
+
+  // 달력의 월별 날짜 데이터에 가상의 mock 데이터를 생성하여 삽입
+  const mockCalendarDaysOfMonth = [
+    { 
+      year: state.selectedYear, 
+      monthIndex: state.selectedMonth.monthIndex, 
+      dayNumber: 1, 
+      dayNumberInWeek: new Date(state.selectedYear, state.selectedMonth.monthIndex, 1).getDay(), 
+      date: new Date(state.selectedYear, state.selectedMonth.monthIndex, 1),
+      monthShort: '2024-06-16'
+    },
+    // { 
+    //   year: state.selectedYear, 
+    //   monthIndex: state.selectedMonth.monthIndex, 
+    //   dayNumber: 2, 
+    //   dayNumberInWeek: new Date(state.selectedYear, state.selectedMonth.monthIndex, 2).getDay(), 
+    //   date: new Date(state.selectedYear, state.selectedMonth.monthIndex, 2),
+    //   monthShort: '2024-06-17'
+    // },
+    // { 
+    //   year: state.selectedYear, 
+    //   monthIndex: state.selectedMonth.monthIndex, 
+    //   dayNumber: 3, 
+    //   dayNumberInWeek: new Date(state.selectedYear, state.selectedMonth.monthIndex, 3).getDay(), 
+    //   date: new Date(state.selectedYear, state.selectedMonth.monthIndex, 3),
+    //   monthShort: '2024-06-18'
+    // },
+    // 이하 생략, 실제 사용 시 모든 날짜를 포함해야 함
+  ];
+
+  // 실제 상태에 mock 데이터 적용
+  // state.calendarDaysOfMonth = mockCalendarDaysOfMonth;
+
 
   return (
     <>
